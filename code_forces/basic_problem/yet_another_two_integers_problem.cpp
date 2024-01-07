@@ -33,3 +33,7 @@ int main() {
     } 
     return 0;
 }
+
+// optimize solution
+
+// abs(a - b) + 9 / 10
