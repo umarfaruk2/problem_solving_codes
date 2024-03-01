@@ -8,27 +8,29 @@ int main() {
     long long n;
     cin >> n;
 
-    long long tem = n;
     if(n > 0) {
         cout << n << "\n";
     } else {
-        int big_number = 0;
-        while(n) {
-            int last_number = n % 10;
-            big_number = max(big_number, abs(last_number));
-            n /= 10; 
+        int first_num = (n % 10);
+        n /= 10;
+        int second_num = n % 10;
+        n /= 10;
+
+        if(abs(n) == 0) {
+            if(abs(first_num) > abs(second_num)) {
+                cout << second_num << "\n";
+                return 0;
+            } else {
+                cout << first_num << "\n";
+                return 0;
+            }
         }
 
-        string st = to_string(tem);
-        
-        size_t find_element = st.find(to_string(big_number));
-        if(find_element != string::npos) {
-            st.erase(find_element, 1);
+       if(abs(first_num) > abs(second_num)) {
+            cout << stoi(to_string(n) + to_string(abs(second_num))) << "\n";
+        } else {
+            cout << stoi(to_string(n) + to_string(abs(first_num))) << "\n";
         }
-
-        long long result = stoi(st);
-
-        cout << result << "\n";
     }
     return 0;
 }
