@@ -13,11 +13,8 @@ int main() {
         cin >> s;
 
         string subStr_1 = s.substr(0, 2);
-        // string subStr_2 = s.substr(3, 4);
         int con = stoi(subStr_1);
-        // int con_2 = stoi(subStr_2);
 
-        // cout << subStr_2 << "\n"; 
         if(con > 12) {
             if(con - 12 > 9) 
                 cout << con - 12 << ":" << s[3] << s[4] << " PM\n"; 
